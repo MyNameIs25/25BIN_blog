@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '5^&dg(21-+1(!*d6-*45q+k#2=_kv))$1z)%*3v+noripqp_e9'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -219,18 +219,7 @@ LOGIN_REDIRECT_URL = '/'
 #
 # SECURE_SSL_REDIRECT = True
 
-# SMTP服务器，改为你的邮箱的smtp!
-EMAIL_HOST = 'smtp.gmail.com'
-# 改为你自己的邮箱名！
-EMAIL_HOST_USER = '25bin.blog@gmail.com'
-# 你的邮箱密码
-EMAIL_HOST_PASSWORD = 'zzb28868332'
-# 发送邮件的端口
-EMAIL_PORT = 587
-# 是否使用 TLS
-EMAIL_USE_TLS = True
-# 默认的发件人
-DEFAULT_FROM_EMAIL = '25BIN_BLOG <25bin.blog@gmail.com>'
+
 
 
 CKEDITOR_CONFIGS = {
