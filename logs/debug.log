@@ -1,0 +1,558 @@
+ERROR 2020-11-01 17:55:18,312 log 6620 1552 Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\GitHub\DjangoBlog\blog\views.py", line 114, in index
+    return render(request, 'blog/index.html', locals())
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loader_tags.py", line 266, in do_extends
+    nodelist = parser.parse()
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loader_tags.py", line 209, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\defaulttags.py", line 811, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 449, in parse
+    raise self.error(token, e)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 447, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 563, in compile_filter
+    return FilterExpression(token, self)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 657, in __init__
+    filter_func = parser.find_filter(filter_name)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 569, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'timesince_zh'
+ERROR 2020-11-01 17:55:39,879 log 6620 1552 Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\GitHub\DjangoBlog\blog\views.py", line 114, in index
+    return render(request, 'blog/index.html', locals())
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loader_tags.py", line 266, in do_extends
+    nodelist = parser.parse()
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loader_tags.py", line 209, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\defaulttags.py", line 811, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 449, in parse
+    raise self.error(token, e)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 447, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 563, in compile_filter
+    return FilterExpression(token, self)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 657, in __init__
+    filter_func = parser.find_filter(filter_name)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 569, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'time_since_zh'
+ERROR 2020-11-01 17:55:41,431 log 6620 1552 Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\GitHub\DjangoBlog\blog\views.py", line 114, in index
+    return render(request, 'blog/index.html', locals())
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loader_tags.py", line 266, in do_extends
+    nodelist = parser.parse()
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loader_tags.py", line 209, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\defaulttags.py", line 811, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 449, in parse
+    raise self.error(token, e)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 447, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 563, in compile_filter
+    return FilterExpression(token, self)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 657, in __init__
+    filter_func = parser.find_filter(filter_name)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 569, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'time_since_zh'
+ERROR 2020-11-01 17:55:42,734 log 6620 1552 Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\GitHub\DjangoBlog\blog\views.py", line 114, in index
+    return render(request, 'blog/index.html', locals())
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loader_tags.py", line 266, in do_extends
+    nodelist = parser.parse()
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loader_tags.py", line 209, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\defaulttags.py", line 811, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 449, in parse
+    raise self.error(token, e)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 447, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 563, in compile_filter
+    return FilterExpression(token, self)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 657, in __init__
+    filter_func = parser.find_filter(filter_name)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 569, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'time_since_zh'
+WARNING 2020-11-02 19:26:58,865 log 10028 7320 Not Found: /favicon.ico
+WARNING 2020-11-02 21:48:37,577 log 6048 936 Not Found: /favicon.ico
+WARNING 2020-11-02 21:48:58,683 log 6048 15532 Not Found: /favicon.ico
+ERROR 2020-11-03 13:56:24,159 log 6068 9432 Internal Server Error: /blog/8/
+Traceback (most recent call last):
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\GitHub\DjangoBlog\blog\views.py", line 131, in detail
+    return render(request, 'blog/detail.html', locals())
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\defaulttags.py", line 209, in render
+    nodelist.append(node.render_annotated(context))
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\defaulttags.py", line 443, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\urls\base.py", line 90, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\urls\resolvers.py", line 673, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'blog_tag' with arguments '(1,)' not found. 1 pattern(s) tried: ['blog/tag/$']
+WARNING 2020-11-03 13:56:24,699 log 6068 9432 Not Found: /favicon.ico
+ERROR 2020-11-03 13:56:25,442 log 6068 9432 Internal Server Error: /blog/8/
+Traceback (most recent call last):
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\GitHub\DjangoBlog\blog\views.py", line 131, in detail
+    return render(request, 'blog/detail.html', locals())
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\defaulttags.py", line 209, in render
+    nodelist.append(node.render_annotated(context))
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\defaulttags.py", line 443, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\urls\base.py", line 90, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\urls\resolvers.py", line 673, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'blog_tag' with arguments '(1,)' not found. 1 pattern(s) tried: ['blog/tag/$']
+ERROR 2020-11-03 13:58:19,499 log 6068 9660 Internal Server Error: /blog/8/
+Traceback (most recent call last):
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 470, in parse
+    compile_func = self.tags[command]
+KeyError: 'endfor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\GitHub\DjangoBlog\blog\views.py", line 131, in detail
+    return render(request, 'blog/detail.html', locals())
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loader_tags.py", line 266, in do_extends
+    nodelist = parser.parse()
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loader_tags.py", line 209, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 528, in invalid_block_tag
+    get_text_list(["'%s'" % p for p in parse_until], 'or'),
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 26: 'endfor', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2020-11-03 13:58:20,640 log 6068 9660 Internal Server Error: /blog/8/
+Traceback (most recent call last):
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 470, in parse
+    compile_func = self.tags[command]
+KeyError: 'endfor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\GitHub\DjangoBlog\blog\views.py", line 131, in detail
+    return render(request, 'blog/detail.html', locals())
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loader_tags.py", line 266, in do_extends
+    nodelist = parser.parse()
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loader_tags.py", line 209, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 528, in invalid_block_tag
+    get_text_list(["'%s'" % p for p in parse_until], 'or'),
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 26: 'endfor', expected 'endblock'. Did you forget to register or load this tag?
+WARNING 2020-11-03 14:40:21,776 log 6068 9992 Not Found: /blog/3/comment.user.profile.avatar.url
+WARNING 2020-11-03 14:40:21,902 log 6068 9992 Not Found: /blog/3/comment.user.profile.avatar.url
+WARNING 2020-11-03 14:40:24,080 log 6068 5492 Not Found: /blog/3/comment.user.profile.avatar.url
+WARNING 2020-11-03 14:40:24,274 log 6068 5492 Not Found: /blog/3/comment.user.profile.avatar.url
+WARNING 2020-11-03 14:41:32,691 log 6068 5492 Not Found: /blog/3/comment.user.profile.avatar.url
+WARNING 2020-11-03 14:41:32,799 log 6068 5492 Not Found: /blog/3/comment.user.profile.avatar.url
+WARNING 2020-11-03 14:44:19,072 log 6068 5492 Not Found: /blog/3/comment.user.profile.avatar
+WARNING 2020-11-03 14:44:19,184 log 6068 5492 Not Found: /blog/3/comment.user.profile.avatar
+WARNING 2020-11-03 14:44:20,415 log 6068 5492 Not Found: /blog/3/comment.user.profile.avatar
+WARNING 2020-11-03 14:44:20,618 log 6068 5492 Not Found: /blog/3/comment.user.profile.avatar
+WARNING 2020-11-03 14:44:21,306 log 6068 5492 Not Found: /blog/3/comment.user.profile.avatar
+WARNING 2020-11-03 14:44:21,520 log 6068 5492 Not Found: /blog/3/comment.user.profile.avatar
+WARNING 2020-11-03 15:20:07,070 log 6068 16112 Not Found: /favicon.ico
+WARNING 2020-11-03 15:37:25,713 log 6068 7716 Not Found: /userprofile/edit/1/userprofile/css/edit.css
+WARNING 2020-11-03 15:37:25,846 log 6068 7716 Not Found: /userprofile/edit/1/userprofile/css/edit.css
+WARNING 2020-11-03 15:37:29,604 log 6068 7716 Not Found: /userprofile/edit/1/userprofile/css/edit.css
+WARNING 2020-11-03 15:37:53,995 log 6068 7716 Not Found: /userprofile/css/edit.css
+WARNING 2020-11-03 15:38:03,035 log 6068 4828 Not Found: /userprofile/edit/1/userprofile/css/edit.css
+WARNING 2020-11-03 15:38:03,107 log 6068 4828 Not Found: /userprofile/edit/1/userprofile/css/edit.css
+WARNING 2020-11-03 16:13:16,857 log 6068 16904 Not Found: /favicon.ico
+ERROR 2020-11-03 16:42:47,877 log 6068 11532 Internal Server Error: /userprofile/login/
+Traceback (most recent call last):
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 470, in parse
+    compile_func = self.tags[command]
+KeyError: 'provider_login_url'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\GitHub\DjangoBlog\userprofile\views.py", line 31, in user_login
+    return render(request, 'userprofile/login.html', context)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loader_tags.py", line 266, in do_extends
+    nodelist = parser.parse()
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loader_tags.py", line 209, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 528, in invalid_block_tag
+    get_text_list(["'%s'" % p for p in parse_until], 'or'),
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 17: 'provider_login_url', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2020-11-03 16:42:48,900 log 6068 11532 Internal Server Error: /userprofile/login/
+Traceback (most recent call last):
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 470, in parse
+    compile_func = self.tags[command]
+KeyError: 'provider_login_url'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\WORK\GitHub\DjangoBlog\userprofile\views.py", line 31, in user_login
+    return render(request, 'userprofile/login.html', context)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loader_tags.py", line 266, in do_extends
+    nodelist = parser.parse()
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\loader_tags.py", line 209, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "D:\WORK\GitHub\DjangoBlog\venv\lib\site-packages\django\template\base.py", line 528, in invalid_block_tag
+    get_text_list(["'%s'" % p for p in parse_until], 'or'),
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 17: 'provider_login_url', expected 'endblock'. Did you forget to register or load this tag?

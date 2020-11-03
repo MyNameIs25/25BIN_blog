@@ -1,0 +1,202 @@
+{% load static %}
+{% load socialaccount %}
+{% load notifications_tags %}
+{% load blog_tags %}
+{% notifications_unread as unread_count %}
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}基本模板{% endblock %}</title>
+    <link rel="shortcut icon" href="#"/>
+    <link href="{% static 'bootstrap-3.3.7-dist/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'blog/css/blog_nav.css' %}" rel="stylesheet">
+    <script src="{% static 'iconfont/fontawesome.js' %}"></script>
+    {% block css %}
+
+
+    {% endblock %}
+    <!--[if lt IE 9]>
+      <script src="{% static 'jquery-3.5.1.min.js' %}"></script>
+      <script src="{% static 'bootstrap-3.3.7-dist/js/bootstrap.min.js' %}"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <nav class="container-fluid">
+      <div class="wrapper">
+            <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
+          <div class="logo"><a href="/blog"><img src="{% static 'blog/images/25BIN_logo_white.png' %}" alt="25BIN_logo"></a></div>
+          <input type="radio" name="slider" id="menu-btn">
+          <input type="radio" name="slider" id="close-btn">
+          <ul class="nav-links">
+            <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+            <li><a href="/blog">Home</a></li>
+            <li>
+              <a href="#" class="desktop-item">Column</a>
+              <input type="checkbox" id="showDrop">
+              <label for="showDrop" class="mobile-item">Dropdown Menu</label>
+              <ul class="drop-menu">
+                  {% get_columns as columns %}
+                    {% for column in columns %}
+                <li><a href="{% url 'blog:blog_column' column.id %}">{{ column.title }}</a></li>
+                    {% endfor %}
+              </ul>
+            </li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Feedback</a></li>
+          </ul>
+          <div class="search-icon"><span class="fas fa-search"></span></div>
+            <div class="cancel-icon"><span class="fas fa-times"></span></div>
+            <form action="{% url 'blog:blog_search' %}" method="get">
+                <input type="search" class="search-data" name="keyword" placeholder="Search" required>
+                <button type="submit" class="fas fa-search"></button>
+            </form>
+            {% if user.is_authenticated or request.session.login %}
+                    {% if user.profile.avatar %}
+                        <a href="{% url "userprofile:edit" user.id %}">
+                    <img src="{{ user.profile.avatar.url }}" alt="avatar" id="small-avatar">
+                        </a>
+                    {% endif %}
+                {% else %}
+            <div class="small-login">
+                <a href="{% url 'userprofile:login' %}"><i class="fas fa-address-card"></i></a>
+            </div>
+            {% endif %}
+          <ul class="nav navbar-nav navbar-right login">
+              {% if user.is_authenticated or request.session.login %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {% if user.profile.avatar %}
+                                <img src="{{ user.profile.avatar.url }}" alt="avatar">
+                                {% else %}
+                                <img src="{% static 'blog/images/default_avatar.jpg' %}" alt="avatar">
+                                {% endif %}
+                            {{ user.username }}
+                            {% if unread_count %}
+                            <svg viewBox="0 0 8 8"
+                                 width="8px"
+                                 height="8px">
+                                <circle cx="4"
+                                        cy="4"
+                                        r="4"
+                                        fill="#ff6b6b"
+                                        ></circle>
+                            </svg>
+                          {% endif %}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="{% url "notice:list" %}">Info
+                            {% if unread_count %}
+                                <span class="badge badge-danger">{{ unread_count }}</span>
+                            {% endif %}
+                          </a>
+                          <a class="dropdown-item" href='{% url "userprofile:edit" user.id %}'>Profile</a>
+                        {% if request.session.login %}
+                          <a class="nav-link" href="{% url 'blog:article_create' %}">Write</a>
+                        {% endif %}
+                          <a class="dropdown-item" href="{% url "userprofile:logout" %}">Logout</a>
+                          <button class="dropdown-item" onclick="user_delete()"><strong>Delete Account</strong></button>
+                        </div>
+                    </li>
+{#                    <li><span>用户名:{{ user.username }}</span></li>#}
+{#                    <li><a href="/accounts/logout">退出登录</a></li>#}
+                  {% else %}
+                    <li><a href="{% url 'userprofile:login' %}"><i class="fas fa-address-card"></i><span>Login</span></a></li>
+{#                    <li><a href="{% provider_login_url "github" method="oauth2" %}">Github</a></li>#}
+              {% endif %}
+          </ul>
+        </div>
+        </div>
+      </div>
+    </nav>
+    <div></div>
+
+    {% block content %}
+
+
+    {% endblock %}
+    <div id="back-to-top">
+        <i class="fas fa-angle-up"></i>
+    </div>
+
+    <footer>
+        <div role="navigation">
+            <div class="container-fluid cc_cursor">
+                <div>
+                    <ul class="footer-text clear row">
+                        <li class="col-md-8 col-sm-12">
+                            <div class="footer-left">
+                                <img src="{% static 'blog/images/25BIN_logo_white.png' %}" alt="25BIN_logo">
+                                <div>
+                                <p class="footer-title">ABOUT US</p>
+                                <p>
+                                    25BIN is a blog where you may find something useful about CS Tech, or you may find nothing.<br>
+                                    Because I made this website just for practicing for now.
+                                </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="col-md-4 col-sm-12">
+                            <div class="footer-right">
+                                <p class="footer-title">FOLLOW US</p>
+                                <a href="https://github.com/MyNameIs25" target="_blank"><i class="fab fa-github"></i></a>
+                            </div>
+                        </li>
+                    </ul>
+                    <p class="row footer-bottom">Copyright © Blog of 25BIN</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="{% static 'jquery-3.5.1.min.js' %}"></script>
+    <script src="{% static 'bootstrap-3.3.7-dist/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'layer-3.1.1/layer.js' %}"></script>
+    <script>
+        $("#back-to-top").click(() => {
+            window.scrollTo(0,0);
+        })
+        const searchBtn = document.querySelector(".search-icon");
+        const cancelBtn = document.querySelector(".cancel-icon");
+        const form = document.querySelector("form");
+        cancelBtn.onclick = ()=>{
+          searchBtn.classList.remove("hide");
+          cancelBtn.classList.remove("show");
+          form.classList.remove("active");
+          cancelBtn.style.color = "#ff3d00";
+        }
+        searchBtn.onclick = ()=>{
+          form.classList.add("active");
+          searchBtn.classList.add("hide");
+          cancelBtn.classList.add("show");
+        }
+    </script>
+{% if user.is_authenticated %}
+    <form style="display:none;" id="user_delete" action="{% url 'userprofile:delete' user.id %}" method="POST">
+    {% csrf_token %}
+        <button type="submit" onclick="{ console.log('删除操作'); }">发送</button>
+    </form>
+    <script>
+        function user_delete() {
+            // 调用layer弹窗组件
+            layer.open({
+                title: "确认删除",
+                content: "确认删除用户资料吗？",
+                yes: function(index, layero) {
+                    $('form#user_delete button').click();
+                    layer.close(index);
+                },
+            })
+        }
+
+    </script>
+{% endif %}
+
+    {% block script %}
+
+    {% endblock %}
+  </body>
+</html>

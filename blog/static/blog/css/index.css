@@ -1,0 +1,77 @@
+#paginator .pagination{
+    margin: 20px auto;
+}
+
+.entry{
+    height: 100%;
+    width: 100%;
+    margin: 20px 0;
+    padding-bottom: 10px;
+    padding-left: 15px;
+}
+
+.entry button{
+    background-color: #1F2833;
+    color: #F2F2F2;
+    font-weight: 600;
+    border-radius: 15px;
+    margin-right: 10px;
+    transition: all .2s ease;
+}
+
+.entry .entry-info{
+    margin-left: 25px;
+}
+
+.entry .entry-info p{
+    margin: 10px;
+    line-height: 14px;
+}
+
+.entry .entry-info .entry-abstract{
+    height: 40px;
+    font-size: 15px;
+}
+
+.entry .author-info i{
+    font-size: 14px;
+    margin-right:5px;
+}
+
+.entry .author-info span{
+    margin-right: 10px;
+}
+
+.entry button:hover{
+    color: #F2F2F2;
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(0,0,0,.1);
+}
+
+.entry .tags{
+    border-radius: 2px;
+    background-color: #14A76C;
+    padding: 5px;
+}
+
+.entry h2{
+    margin-top: 10px;
+}
+
+.entry h2 a{
+    color: #0B0C10;
+}
+
+.entry .entry-img{
+    height: 150px;
+    width: 150px;
+    display: block;
+    float: left;
+    margin: 10px 25px;
+    transition: all .5s ease;
+}
+
+.entry .entry-img:hover{
+    box-shadow: 0 15px 30px rgba(0,0,0,.1);
+    transform: translateY(-2px);
+}

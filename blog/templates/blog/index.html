@@ -1,0 +1,92 @@
+{% extends 'blog/base.html' %}
+{% load staticfiles %}
+{% load blog_tags %}
+{% block title %}博客首页{% endblock %}
+
+{% block css %}
+
+<link href="{% static 'blog/css/index.css' %}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+    <div class="container" style="margin-top: 70px;">
+        <div class="row">
+            <div class="col-md-9">
+                {% for entry in entry_list %}
+                    <br/>
+                    <div class="entry clear">
+                    {% if entry.img %}
+                        <a href="{{ entry.get_absolute_url }}"><img src="{{ entry.img.url }}" alt="博客配图" width="50%" height="50%" class="entry-img l"/></a>
+                    {% endif %}
+                    <div class="entry-info l">
+                    <h2><a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a></h2>
+                    <!-- 栏目 -->
+                    {% if entry.column %}
+                        <a href="{% url 'blog:blog_column' entry.column.id %}">
+                        <button type="button" class="btn btn-sm mb-2" >
+                            {{ entry.column }}
+                        </button>
+                        </a>
+                    {% endif %}
+                    <!-- 标签 -->
+                    <span>
+                        {% for tag in entry.tags.all %}
+                            <a href="{% url 'blog:blog_tag' %}?tag={{ tag }}" class="badge badge-secondary tags">
+                                {{ tag }}
+                            </a>
+                        {% endfor %}
+                    </span>
+                    {% if entry.abstract %}
+                        <p class="entry-abstract">{{ entry.abstract }}</p>
+                    {% else %}
+                        <p>{{ entry.body|truncatechars:128 }}...</p>
+                    {% endif %}
+                    <p class="author-info">
+                        <i class="fas fa-user-circle"></i><span>{{ entry.author }}</span>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-calendar-times"></i><span>{{ entry.created_time|timesince_zh }}</span>
+                       &nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-eye"></i> <span>{{ entry.visited }}</span>
+                    </p>
+                    </div>
+                </div>
+                <hr>
+                {% endfor %}
+                <div id="paginator">
+            <ul class="pagination pagination-lg">
+                {% if entry_list.has_previous %}
+                    <li><a href="?page={{ entry_list.previous_page_number }}"><i class="glyphicon glyphicon-chevron-left"></i>上一页</a></li>
+                {% endif %}
+                {% if first %}
+                    <li><a href="?page=1">1</a></li>
+                {% endif %}
+                {% if left %}
+                    {% if left_has_more %}
+                        <span>...</span>
+                    {% endif %}
+                    {% for i in left %}
+                        <li><a href="?page={{ i }}">{{ i }}</a></li>
+                    {% endfor %}
+                {% endif %}
+                <li class="active"><a href="?page={{ entry_list.number }}">{{ entry_list.number }}</a></li>
+                {% if right %}
+                    {% for i in right %}
+                        <li><a href="?page={{ i }}">{{ i }}</a></li>
+                    {% endfor %}
+                    {% if right_has_more %}
+                        <span>...</span>
+                    {% endif %}
+                {% endif %}
+                {% if last %}
+                    <li><a href="?page={{ entry_list.num_pages }}">{{ entry_list.num_pages }}</a></li>
+                {% endif %}
+                {% if entry_list.has_next %}
+                    <li><a href="?page={{ entry_list.next_page_number }}"><i class="glyphicon glyphicon-chevron-right"></i>下一页</a></li>
+                {% endif %}
+            </ul>
+        </div>
+            </div>
+
+            <div class="col-md-3">
+                {% include 'blog/right_side_bar.html' %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

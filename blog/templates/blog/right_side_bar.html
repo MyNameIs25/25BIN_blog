@@ -1,0 +1,91 @@
+{% load blog_tags %}
+
+
+{% block toc %}
+
+{% endblock %}
+<div class="row" style="padding-left: 15px; ">
+    <div class="widget">
+        <h3>最新文章</h3>
+        {% get_recent_entries as recent_entry_list %}
+        {% for entry in recent_entry_list %}
+            <div>
+                <a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a>
+                <div>{{ entry.author }}  发表于:{{ entry.created_time|date:"Y-m-d" }}</div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+<hr>
+<div class="row recommend" style="padding-left: 15px;">
+    <div class="widget">
+        <h3>推荐文章</h3>
+        {% get_popular_entries as popular_entry_list %}
+        {% for entry in popular_entry_list %}
+            <div>
+                <a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a>
+                <span class="badge">{{ entry.visited }}</span>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+<hr>
+<div class="row columns " style="padding-left: 15px;">
+    <div class="widget">
+        <h3>栏目</h3>
+        {% get_columns as columns %}
+        <ul class="list-group">
+        {% for column in columns %}
+            <div>
+                <li class="list-group-item">
+               <a href="{% url 'blog:blog_column' column.id %}"> <i class="glyphicon glyphicon-chevron-right"></i> {{ column.title }}</a>
+                </li>
+            </div>
+        {% endfor %}
+        </ul>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="widget" style="padding-left: 15px;">
+        <h3>归档</h3>
+        {% archives as date_list %}
+        <ul class="list-group">
+        {% for date in date_list %}
+            <li class="list-group-item">
+                <a href="{% url 'blog:blog_archives' date.year date.month %}">
+                    <i class="glyphicon glyphicon-chevron-right"></i>
+                    {{ date.year }}-{{ date.month }}
+                    <span class="badge" style="font-size: 10px; padding: 2px 5px; ">
+                        {% get_entry_count_of_date date.year date.month %}
+                    </span>
+                </a>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+</div>
+
+<hr>
+<div class="row" style="padding-left: 15px;">
+    <!-- 标签 -->
+    <span>
+        {% get_tags as tags %}
+        {% for tag in tags.all %}
+            <a href="{% url 'blog:blog_tag' %}?tag={{ tag }}"
+               class="badge badge-secondary"
+               style="padding: 5px 10px; line-height: 12px; background: #14A76C;"
+            >
+                {{ tag }}
+            </a>
+        {% endfor %}
+    </span>
+</div>
+
+
+<hr>
+<div class="row" style="padding-left: 15px;">
+    <div class="rss">
+        <a href="/latest/feed/"><i class="glyphicon glyphicon-globe"></i>RSS订阅</a>
+    </div>
+</div>

@@ -1,0 +1,54 @@
+{% extends "blog/base.html" %}
+{% load staticfiles %}
+{% block tltle %}用户信息{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{% static "userprofile/css/edit.css" %}">
+{% endblock %}
+{% block content %}
+    <div class="container" style="margin-top: 70px; margin-bottom: 100px;">
+        <div class="row">
+            <div class="col-12">
+                <br>
+                {% if profile.avatar %}
+                    <div class="col-md-6 left-part">
+                    <img src="{{ profile.avatar.url }}" style="max-width: 80%; border-radius: 15%;" class="row col-md-12">
+                    <div class="row col-md-9">
+                        <p>Avatar</p>
+                        <p>User name: {{ user.username }}</p>
+                    </div>
+                    </div>
+                {% else %}
+                    <div class="row col-md-6 left-part">
+                    <p>you don't have an avatar.</p>
+                    <p>User name: {{ user.username }}</p>
+                    </div>
+                {% endif %}
+                <div class="col-md-6">
+                <br>
+                <form enctype="multipart/form-data" method="post" action=".">
+                    {% csrf_token %}
+                    <!-- avatar -->
+                    <div class="form-group col-md-12">
+                        <label for="avatar">Upload Avatar</label>
+                        <input type="file" class="form-control-file" name="avatar" id="avatar">
+                    </div>
+                    <!-- phone -->
+                    <div class="form-group col-md-6">
+                        <label for="phone">Tel.</label>
+                        <input type="text" class="form-control" id="phone" name="phone" value="{{ profile.phone }}">
+                    </div>
+                    <!-- bio -->
+                    <div class="form-group col-md-6">
+                        <label for="bio">Intro.</label>
+                        <textarea type="text" class="form-control" id="bio" name="bio" rows="12">{{ profile.bio }}</textarea>
+                    </div>
+                    <!-- 提交按钮 -->
+                    <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary pull-right">Submit</button>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
