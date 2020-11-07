@@ -19,7 +19,7 @@ def user_login(request):
             user = authenticate(username=data['username'], password=data['password'])
             if user:
                 # 将用户数据保存在 session 中，即实现了登录动作
-                login(request, user)
+                login(request, user, backend='django.contrib.auth.backends.ModelBackend')
                 return redirect("blog:blog_index")
             else:
                 return HttpResponse("账号或密码输入有误。请重新输入~")
@@ -47,7 +47,7 @@ def user_register(request):
             new_user.set_password(user_register_form.cleaned_data['password'])
             new_user.save()
             # 保存好数据后立即登录并返回博客列表页面
-            login(request, new_user)
+            login(request, new_user, backend='django.contrib.auth.backends.ModelBackend')
             return redirect("blog:blog_index")
         else:
             return HttpResponse("注册表单输入有误，请重新输入。")
